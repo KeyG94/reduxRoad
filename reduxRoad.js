@@ -4,7 +4,47 @@ const initialWagonState = {
     days: 0,
     cash: 200,
   }
+
+//action sets - no params
+const gather = () => {
+    return {
+        type: 'gather'
+    }
+};
+
+const tippedWagon = () => {
+    return {
+        type: 'tippedWagon'
+    }
+};
+
+const sell = () => {
+    return {
+        type: 'sell'
+    }
+};
+
+const buy = () => {
+    return {
+        type: 'buy'
+    }
+};
+
+const theft = () => {
+    return {
+        type: 'theft'
+    }
+};
+
+//action sets w/ params
+const travel = (payload) => {
+    return {
+        type: 'travel',
+        payload
+    }
+};
   
+//reducer function
   const reducer = (state = initialWagonState, action) => {
     switch(action.type){
       case 'gather': {
@@ -75,40 +115,26 @@ const initialWagonState = {
   let wagon = reducer(undefined, {});
   console.log(wagon);
   
-  wagon = reducer(wagon, {
-    type: 'travel',
-    payload: 1
-  });
+  wagon = reducer(wagon, travel(1));
   console.log(wagon);
   
-  wagon = reducer(wagon, {
-    type: 'gather'
-  });
+  wagon = reducer(wagon, gather());
   console.log(wagon);
   
-  wagon = reducer(wagon, {
-    type: 'tippedWagon'
-  });
+  wagon = reducer(wagon, tippedWagon());
   console.log(wagon);
   
-  wagon = reducer(wagon, {
-    type: 'travel',
-    payload: 3
-  });
+  wagon = reducer(wagon, travel(3));
   console.log(wagon);
   
-  wagon = reducer(wagon, {
-    type: 'theft'
-  });
+  wagon = reducer(wagon, theft());
   console.log(wagon);
   
   //reset
   wagon = reducer(undefined, {});
   console.log(wagon);
   
-  wagon = reducer(wagon, {
-    type: 'travel',
-    payload: 4
-  });
+  wagon = reducer(wagon, travel(4));
   console.log(wagon);
+
   
