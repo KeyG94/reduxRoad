@@ -1,7 +1,6 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
-import Button from './compoments/Button';
-// import { store } from './reducer';
+import Button from './compoments/button/Button';
 
 
 function App() {
