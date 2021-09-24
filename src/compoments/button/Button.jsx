@@ -1,7 +1,7 @@
 import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { gather, travel, buy, sell } from '../../actions';
-import './Button.module.scss';
+import styles from './Button.module.scss';
 
 function Button() {
     const supplies = useSelector(state => state.supplies);
@@ -10,7 +10,7 @@ function Button() {
 
     return (
         <>
-            <div className="random">
+            <div className={styles.random}>
                 <div>
                     <label className="label">Gather: </label>
                     <span>Cost: 1 day </span>

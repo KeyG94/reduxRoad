@@ -1,6 +1,7 @@
 .random{
     display: flex;
-    background-color: blue;
+    flex-wrap: wrap;
+    justify-content: space-between;
 }
 
 label{
@@ -12,7 +13,12 @@ button{
     color: white;
     padding: 8px;
     border: none;
-    margin-bottom: 4px;
+    width: 100%;
+}
+
+button:hover{
+    background-color: rgb(3, 153, 158);
+    color: black;
 }
 
 div{
